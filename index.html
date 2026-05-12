@@ -388,7 +388,7 @@
 </footer>
 
 <script>
-  function joinWaitlist(inputId, successId) {
+  async function joinWaitlist(inputId, successId) {
     const input = document.getElementById(inputId);
     const success = document.getElementById(successId);
     const email = input.value.trim();
@@ -398,12 +398,39 @@
       return;
     }
     const btn = input.nextElementSibling;
-    btn.textContent = 'Done!';
-    btn.style.background = '#178a64';
-    input.disabled = true;
-    success.style.display = 'block';
-    // Store email locally for now — replace with your backend endpoint
-    console.log('Waitlist signup:', email);
+    btn.textContent = 'Adding...';
+    btn.disabled = true;
+    try {
+      const form = document.createElement('form');
+      form.action = 'https://nutriquest.us14.list-manage.com/subscribe/post?u=647c5a015010e29ae6bde001d&id=f93240675b&f_id=001bc2e1f0';
+      form.method = 'POST';
+      form.target = 'mailchimp_frame';
+      const emailInput = document.createElement('input');
+      emailInput.name = 'EMAIL';
+      emailInput.value = email;
+      form.appendChild(emailInput);
+      const hiddenInput = document.createElement('input');
+      hiddenInput.type = 'hidden';
+      hiddenInput.name = 'tags';
+      hiddenInput.value = 'waitlist';
+      form.appendChild(hiddenInput);
+      document.body.appendChild(form);
+      const iframe = document.createElement('iframe');
+      iframe.name = 'mailchimp_frame';
+      iframe.style.display = 'none';
+      document.body.appendChild(iframe);
+      form.submit();
+      document.body.removeChild(form);
+      setTimeout(() => document.body.removeChild(iframe), 3000);
+      btn.textContent = 'Done!';
+      btn.style.background = '#178a64';
+      input.disabled = true;
+      success.style.display = 'block';
+    } catch(e) {
+      btn.textContent = 'Join waitlist';
+      btn.disabled = false;
+      input.style.borderColor = '#e74c3c';
+    }
   }
 </script>
 </body>
