@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — NutriQuest</title>
+  <meta name="description" content="The story behind NutriQuest — why we built a nutrition app that plays like a game.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green: #1D9E75;
+      --green-dim: #178a64;
+      --bg: #080808;
+      --bg2: #101010;
+      --bg3: #161616;
+      --border: rgba(255,255,255,0.07);
+      --text: #f0f0f0;
+      --muted: #888;
+      --font-display: 'Syne', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 16px; line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 18px 40px; display: flex; align-items: center; justify-content: space-between; background: rgba(8,8,8,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo-icon { width: 32px; height: 32px; background: var(--green); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+    .nav-logo-icon svg { width: 18px; height: 18px; fill: white; }
+    .nav-logo-text { font-family: var(--font-display); font-size: 17px; font-weight: 700; color: var(--text); }
+    .nav-logo-text span { color: var(--green); }
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta { background: var(--green); color: white; padding: 9px 20px; border-radius: 8px; font-size: 14px; font-weight: 500; text-decoration: none; }
+    main { max-width: 700px; margin: 0 auto; padding: 140px 24px 100px; }
+    .page-tag { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--green); margin-bottom: 16px; }
+    h1 { font-family: var(--font-display); font-size: clamp(36px, 5vw, 56px); font-weight: 800; line-height: 1.05; letter-spacing: -1.5px; margin-bottom: 40px; }
+    h2 { font-family: var(--font-display); font-size: 22px; font-weight: 700; margin: 48px 0 12px; }
+    p { color: var(--muted); margin-bottom: 20px; font-size: 16px; font-weight: 300; }
+    p strong { color: var(--text); font-weight: 500; }
+    .divider { height: 1px; background: var(--border); margin: 48px 0; }
+    .values { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+    .value { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 24px; }
+    .value-icon { font-size: 24px; margin-bottom: 10px; }
+    .value-title { font-family: var(--font-display); font-size: 15px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+    .value-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+    .contact-box { background: var(--bg2); border: 1px solid var(--border); border-radius: 16px; padding: 32px; margin-top: 48px; }
+    .contact-box h3 { font-family: var(--font-display); font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+    .contact-box p { margin-bottom: 16px; }
+    .contact-box a { color: var(--green); text-decoration: none; }
+    footer { border-top: 1px solid var(--border); padding: 32px 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-logo { font-family: var(--font-display); font-size: 16px; font-weight: 700; }
+    .footer-logo span { color: var(--green); }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { font-size: 13px; color: var(--muted); text-decoration: none; }
+    .footer-links a:hover { color: var(--text); }
+    @media (max-width: 640px) { nav { padding: 16px 20px; } .nav-links { display: none; } .values { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <div class="nav-logo-icon">
+      <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14.93V15a1 1 0 0 0-2 0v1.93A8 8 0 0 1 4.07 11H6a1 1 0 0 0 0-2H4.07A8 8 0 0 1 11 4.07V6a1 1 0 0 0 2 0V4.07A8 8 0 0 1 19.93 11H18a1 1 0 0 0 0 2h1.93A8 8 0 0 1 13 16.93z"/></svg>
+    </div>
+    <span class="nav-logo-text"><span>Nutri</span>Quest</span>
+  </a>
+  <div class="nav-links">
+    <a href="/#how">How it works</a>
+    <a href="/#features">Features</a>
+    <a href="/#pricing">Pricing</a>
+    <a href="about.html">About</a>
+  </div>
+  <a href="/#waitlist" class="nav-cta">Join waitlist</a>
+</nav>
+
+<main>
+  <div class="page-tag">About NutriQuest</div>
+  <h1>Built for people who hate tracking food</h1>
+
+  <p>Honest truth: <strong>most nutrition apps make you feel bad.</strong> You log a meal, get a red bar telling you you've gone over your calories, and close the app feeling guilty. After a few days you stop opening it entirely.</p>
+
+  <p>We built NutriQuest because we believed there was a better way. Not a way that lectures you about food, but one that <strong>rewards you for paying attention to it.</strong></p>
+
+  <h2>The idea</h2>
+  <p>Duolingo proved something important: if you make a habit feel like a game, people actually build it. A streak turns into something you don't want to break. XP makes progress feel visible. Leagues make you want to compete. None of that changes what you're learning — it just makes you care about showing up.</p>
+
+  <p>We asked a simple question: <strong>what if nutrition tracking worked the same way?</strong> What if scanning your meals earned you something? What if your consistent choices made your hero look stronger? What if missing a day actually felt like something you wanted to recover from, not just a reason to quit entirely?</p>
+
+  <p>That's NutriQuest. Same nutrition data. Completely different relationship with it.</p>
+
+  <div class="divider"></div>
+
+  <h2>What we believe</h2>
+  <div class="values">
+    <div class="value">
+      <div class="value-icon">🎮</div>
+      <div class="value-title">Habit over willpower</div>
+      <div class="value-desc">Willpower runs out. Good systems don't. We build the system, you build the habit.</div>
+    </div>
+    <div class="value">
+      <div class="value-icon">🔒</div>
+      <div class="value-title">Your data is yours</div>
+      <div class="value-desc">We never sell your health data. We never show you ads. Your food choices are private.</div>
+    </div>
+    <div class="value">
+      <div class="value-icon">🌱</div>
+      <div class="value-title">Progress, not perfection</div>
+      <div class="value-desc">Miss a day? Recover. Have a bad week? Start a new streak. We reward consistency, not flawlessness.</div>
+    </div>
+    <div class="value">
+      <div class="value-icon">⚔️</div>
+      <div class="value-title">Earned, not bought</div>
+      <div class="value-desc">Your hero evolves through your choices, not your wallet. Power is earned. Style is optional.</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <h2>Where we are</h2>
+  <p>NutriQuest is currently in final testing ahead of our iOS and Android launch. We're a small, independent team and we've built every feature ourselves — from the AI food scanner to the league system to the gem economy.</p>
+  <p>We're not backed by a big company. We don't have a marketing budget. We're launching because we built something we genuinely believe in, and we want to put it in front of people who've given up on nutrition apps before.</p>
+  <p><strong>If that sounds like you — join the waitlist.</strong> We'll let you know the moment we're live.</p>
+
+  <div class="contact-box">
+    <h3>Get in touch</h3>
+    <p>Questions, feedback, press enquiries, or just want to say hello — we read everything.</p>
+    <a href="mailto:hello@nutriquest.io">hello@nutriquest.io</a>
+  </div>
+</main>
+
+<footer>
+  <span class="footer-logo"><span>Nutri</span>Quest</span>
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="mailto:hello@nutriquest.io">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>
